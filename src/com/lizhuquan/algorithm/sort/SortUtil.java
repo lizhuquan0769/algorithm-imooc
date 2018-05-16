@@ -55,6 +55,12 @@ public class SortUtil {
         }
     }
 
+    public static int[] copyArray(int[] arr, int length) {
+        int[] dest = new int[length];
+        System.arraycopy(arr, 0, dest, 0, length);
+        return dest;
+    }
+
     public static void main(String[] args) {
         validSort(new int[]{1,3,2});
     }
