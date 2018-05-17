@@ -2,7 +2,7 @@ package com.lizhuquan.algorithm.sort;
 
 /**
  * 希尔排序：插入排序 + 跳跃分割策略
- * TODO
+ * @TODO
  */
 
 public class ShellSort implements Sort{

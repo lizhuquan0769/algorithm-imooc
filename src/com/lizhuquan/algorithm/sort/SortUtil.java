@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Created by lizhuquan on 2018/5/16.
  */
-public class SortUtil {
+public final class SortUtil {
 
     public static int[] generaRandomArray(int genNums, int rangeL, int rangeR) {
         int[] arr = new int[genNums];
