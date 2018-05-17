@@ -5,6 +5,9 @@ package com.lizhuquan.algorithm.sort;
  * Created by lizhuquan on 2018/5/17.
  */
 public class MergeSort implements Sort {
+
+    private InsertionSort insertionSort = new InsertionSort();
+
     @Override
     public int[] sort(int[] arr) {
         mergeSort(arr, 0, arr.length - 1);
@@ -19,14 +22,22 @@ public class MergeSort implements Sort {
      * @return
      */
     private void mergeSort(int[] arr, int left, int right) {
+        // 归并排序代码
         if (left >= right) {
             return;
         }
+        // 归并排序优化, 当left和right差距小的时候, 可以使用插入排序
+//        if (right - left <= 15) {
+//            insertionSort.sort(arr, left, right);
+//        }
 
         int middle  = (left + right) / 2;
         mergeSort(arr, left, middle);
         mergeSort(arr, middle + 1, right);
-        merge(arr, left, middle,  right);
+        if (arr[middle] > arr[middle + 1]) {
+            merge(arr, left, middle,  right);
+        }
+
     }
 
     /**
