@@ -36,7 +36,8 @@ public class QuickSort implements Sort {
      */
     private int partition(int[] arr, int left, int right) {
         int v = arr[left];
-        // arr[left+1...j] < v ; arr[j+1...i) > v
+        // 假设arr[left+1...j] < v ; arr[j+1...i) > v
+        // 最终arr[left...j-1] < v ; arr[j+1...right] > v, j即时定位点
         int j = left;
         for (int i = left + 1; i <= right; i++) {
             if (arr[i] < v) {
